@@ -281,8 +281,7 @@ router.get('/person', function (req, res) {
         {
           degree: 'Bachelor of Science',
           major: 'Computer Science',
-          university:
-            'Massachusetts Institute of Technology',
+          university:'Massachusetts Institute of Technology',
           graduationYear: 2012,
         },
       ],
@@ -306,8 +305,7 @@ router.get('/person', function (req, res) {
               projects: [
                 {
                   name: 'Project Alpha',
-                  description:
-                    'Developing new software platform',
+                  description:'Developing new software platform',
                   status: 'In Progress',
                   teams: [
                     {
@@ -321,14 +319,12 @@ router.get('/person', function (req, res) {
                         {
                           name: 'Alice Johnson',
                           title: 'Software Engineer',
-                          email:
-                            'alice.johnson@example.com',
+                          email: 'alice.johnson@example.com',
                           skills: ['Java', 'Python', 'SQL'],
                           projects: [
                             {
                               name: 'Project A',
-                              description:
-                                'Lorem ipsum dolor sit amet',
+                              description: 'Lorem ipsum dolor sit amet',
                               technologies: [
                                 'Java',
                                 'Spring Framework',
