@@ -1,0 +1,97 @@
+{{!-- 
+Це код container файлу для index сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+ --}}
+
+<div>
+    <h1>{{name}}</h1>
+    <div><em>{{description}}</em></div>
+    <hr>
+    <div>
+        {{#with history}}
+        <div>year: {{year}}</div>
+        <div>founder: {{founder}}</div>
+        {{/with}}
+        <br>
+        <hr>
+        <div>types:</div>
+        {{#each types}}
+        <ul>
+            <div><li>{{this}}</li></div>
+        </ul>
+        {{/each}}
+        <hr>
+        <div>syntax:</div>
+            {{#with syntax}}
+            {{#each variables}}
+            <ul>
+                <div><li>{{this}}</li></div>
+            </ul>
+            {{/each}}
+            {{#each functions}}
+            <div>functions: ({{this}}) </div>
+            {{/each}}
+            <hr>
+            <div>conditionals:</div>
+            {{#each conditionals}}
+            <ul>
+            <div><li>{{this}}</li></div>
+            </ul>
+            {{/each}}
+            <hr>
+            <div>loops:</div>
+            {{#each loops}}
+            <ul>
+                <div><li>{{this}}</li></div>
+            </ul>
+            {{/each}}
+            <hr>
+            {{#each classes}}
+            <div>classes: ({{this}})</div>
+            {{/each}}
+        {{/with}}
+            <hr>
+        <div>features:</div>
+        {{#each features}}
+        <ul>
+            <div><li>{{this}}</li></div>
+        </ul>
+        {{/each}}
+            <hr>
+            <div>libraries:</div>
+            {{#each libraries}}
+            <ul>
+            <div>
+                <li>{{this}}</li>
+            </div>
+            </ul>
+        {{/each}}
+                <hr>
+                <div>tools:</div>
+                {{#each tools}}
+                <ul>
+                    <div>
+                        <li>{{this}}</li>
+                    </div>
+                </ul>
+                {{/each}}
+                        <hr>
+                        <div>community:</div>
+                        {{#each community}}
+                        <ul>
+                            <div>
+                                <li>name: {{name}}</li>
+                                <li>type: {{type}}</li>
+                            </div>
+                        </ul>
+                        {{/each}}
+
+    </div>
+
+    {{!-- <button type="button" class="btn btn-primary">Купити</button> --}}
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в <body>
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
