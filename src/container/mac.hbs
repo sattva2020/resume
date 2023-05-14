@@ -1,0 +1,150 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+
+<div>
+
+    <div></div>
+    <h1>{{name}}</h1>
+    {{!-- <br> --}}
+    <em>{{description}}</em>
+    <br>
+    <div>category: {{category}}</div>
+    <br>
+    <div>price: {{price}}</div>
+    <hr>
+    <div>
+        <b>features:</b>
+        {{#with features}}
+        <div>weight: {{weight}}</div>
+        <div>height: {{dimensions.height}}</div>
+        <div>width: {{dimensions.width}}</div>
+        <div>depth: {{dimensions.depth}}</div>
+        <div>operating_system: {{operating_system}}</div>
+
+        {{#with processor}}
+        <ul><b>processor:</b>
+            <div>
+                <li>brand: {{brand}}</li>
+            </div>
+            <div>
+                <li>model: {{model}}</li>
+            </div>
+            <div>
+                <li>speed: {{speed}}</li>
+            </div>
+            <div>
+                <li>cores: {{cores}}</li>
+            </div>
+            <div>
+                <li>cache: {{cache}}</li>
+            </div>
+        </ul>
+        {{/with}} {{!-- processor --}}
+        {{#with memory}}
+        <ul><b>memory:</b>
+            <div>
+                <li>type: {{type}}</li>
+            </div>
+            <div>
+                <li>size: {{size}}</li>
+            </div>
+            <div>
+                <li>speed: {{speed}}</li>
+            </div>
+        </ul>
+        {{/with}}
+        <ul><b>storage:</b>
+            <div>
+                <li>type: {{storage.type}}</li>
+            </div>
+            <div>
+                <li>size: {{storage.size}}</li>
+            </div>
+        </ul>
+        {{#with display}}
+        <ul><b>display:</b>
+            <div>
+                <li>size: {{size}}</li>
+            </div>
+            <div>
+                <li>resolution: {{resolution}}</li>
+            </div>
+            <div>
+                <li>technology: {{technology}}</li>
+            </div>
+            <div>
+                <li>color_space: {{color_space}}</li>
+            </div>
+            <div>
+                <li>brightness: {{brightness}}</li>
+            </div>
+            <div>
+                <li>refresh_rate: {{refresh_rate}}</li>
+            </div>
+        </ul>
+        {{/with}} {{!-- display --}}
+        {{#with graphics}}
+        <ul><b>graphics:</b>
+            <div>
+                <li>brand: {{brand}}</li>
+            </div>
+            <div>
+                <li>model: {{model}}</li>
+            </div>
+            <div>
+                <li>memory: {{memory}}</li>
+            </div>
+        </ul>
+        {{/with}}
+        <div><b>ports:</b></div>
+        {{#each ports}}
+        <ul>
+            <li>type: {{type}}</li>
+            <li>count: {{count}}</li>
+        </ul>
+        {{#each features}}
+        <div><b>features:</b> {{this}}</div>
+        {{/each}} {{!-- features --}}
+        {{/each}} {{!-- ports --}}
+        {{#with battery}}
+        <ul><b>battery:</b>
+            <div>
+                <li>type: {{type}}</li>
+            </div>
+            <div>
+                <li>capacity: {{capacity}}</li>
+            </div>
+            <div>
+                <li>life: {{life}}</li>
+            </div>
+        </ul>
+        {{/with}}
+        <div>
+            <h2>accessories:</h2>
+        </div>
+        {{#each accessories}}
+        <ul>
+            <div>
+                <li>name: {{name}}</li>
+            </div>
+            <div>
+                <li>price: {{price}}</li>
+            </div>
+        </ul>
+        {{/each}}
+        {{/with}} {{!-- features --}}
+    </div>
+</div>
+
+
+{{!-- <button type="button" class="btn btn-primary">Купити</button> --}}
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    --}}
