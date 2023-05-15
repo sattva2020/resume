@@ -1,0 +1,129 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+
+<div>
+
+    <div>
+    <h1>{{name}}</h1>
+    </div>
+    <hr>
+    {{#each users}}
+    <ul>
+        <li>name: {{name}}</li>
+        <li>gender: {{gender}}</li>
+        <li>age: {{age}}</li>
+        <li>id: {{id}}</li>
+        <hr>
+    </ul>
+    
+    {{#each friends}}
+        <ul><b>friends:</b>
+            <div><li>name: {{name}}</li></div>
+            <div>
+                <li>gender: {{gender}}</li>
+            </div>
+            <div>
+                <li>age: {{age}}</li>
+            </div>
+            <div>
+                <li>id: {{id}}</li>
+            </div>
+            <hr>
+        </ul>
+        {{#each mutual_friends}}
+            <ul><b>mutual_friends:</b>
+                <div><li>name: {{name}}</li></div>
+                <div>
+                    <li>gender: {{gender}}</li>
+                </div>
+                <div>
+                    <li>age: {{age}}</li>
+                </div>
+                <div>
+                    <li>id: {{id}}</li>
+                </div>
+            </ul>
+                {{#each mutual_friends}}
+                <ul><b>mutual_friends:</b>
+                    <div><li>name: {{name}}</li></div>
+                    <div>
+                        <li>gender: {{gender}}</li>
+                    </div>
+                    <div>
+                        <li>age: {{age}}</li>
+                    </div>
+                    <div>
+                        <li>id: {{id}}</li>
+                    </div>
+                </ul>
+                {{/each}}
+
+               {{/each}} {{!-- mutual_friends --}}
+                {{#each groups}}
+                    <ul><b>groups:</b>
+                        <div>
+                            <li>name: {{name}}</li>
+                        </div>
+                        <div>
+                            <li>description: {{description}}</li>
+                        </div>
+                        <div>
+                            <li>id: {{id}}</li>
+                        </div>
+                    </ul>
+                   {{#each members}}
+                        <ul><b>members:</b>
+                            <div><li>name: {{name}}</li></div>
+                            <div>
+                                <li>gender: {{gender}}</li>
+                            </div>
+                            <div>
+                                <li>age: {{age}}</li>
+                            </div>
+                            <div>
+                                <li>id: {{id}}</li>
+                            </div>
+                        </ul>
+                  {{/each}} {{!-- members --}}
+                {{/each}} {{!-- groups --}}
+           {{/each}} {{!-- friends --}}
+        {{#each groups}}
+            <ul><b>groups:</b>
+                <div><li>name: {{name}}</li></div>
+                <div>
+                    <li>description: {{description}}</li>
+                </div>
+                <div>
+                    <li>id: {{id}}</li>
+                </div>
+            </ul>
+        {{#each members}}
+            <ul><b>members:</b>
+                <div><li>name: {{name}}</li></div>
+                <div>
+                    <li>gender: {{gender}}</li>
+                </div>
+                <div>
+                    <li>age: {{age}}</li>
+                </div>
+                <div>
+                    <li>id: {{id}}</li>
+                </div>
+            </ul>
+        {{/each}}    
+    {{/each}} {{!-- groups --}}
+    {{/each}} {{!-- users --}}
+
+</div>
+
+{{!-- <button type="button" class="btn btn-primary">Купити</button> --}}
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    --}}
