@@ -1,101 +1,116 @@
 <main>
-    <h1 class="text-center text-uppercase">Hello world</h1>
-    <h2 class="text-end text-lowercase">Second</h2>
-    <h3 class="text-capitalize">3 title one two</h3>
-
-    <hr>
-
-    <div class="display-1 text-muted">Hello world</div>
-    <div class="display-5">Second</div>
-    <div class="display-6">3 title</div>
-
-    <hr>
-    
-    <div class="text-muted text-end">
-         Додатковий текст
+    {{#with heading}}
+        {{#with main}}
+    <div>
+        <h1 class="text-capitalize">{{title}}</h1>
+        <p>{{text}}</p>
+        {{#with button_text}}
+        <button class="btn btn-primary">
+            <span>{{solid}}</span>
+        </button>
+        
+        <br>
+        <br>
+        <button class="btn btn-outline-primary">{{outline}}</button>
+     </div>
+        {{/with}} {{!-- button_text --}}
+       {{/with}} {{!-- main --}}
+        <br>
+        <br>
+        {{#with second}}
+    <div>
+            <h2>{{title}}</h2>
+        <p>{{text}}</p>
+        {{#with button_text}}
+        <button class="btn btn-secondary">
+            <span class="text-capitalize">{{solid}}</span>
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-outline-secondary">{{outline}}</button>
     </div>
-
-    <hr>
+        {{/with}} {{!-- button_text --}}
+       {{/with}} {{!-- second --}}
         <br>
         <br>
-        <div class="card">
-            <div class="card-body">
-                <button class="btn btn-primary">
-                    <span class="text-uppercase">Button primary</span>
-                </button>
-                <button class="btn btn-secondary">
-                    Button secondary
-                </button>
-                <button class="btn btn-success">
-                    Button success
-                </button>
-                <button class="btn btn-danger">
-                    Button danger
-                </button>
-                <button class="btn btn-warning">
-                    Button warning
-                </button>
-                <button class="btn btn-info">
-                    Button info
-                </button>
-                <button class="btn btn-light">
-                    Button light
-                </button>
+            {{#with subblock}}
+        <div>
+            <h3>{{title}}</h3>
+            <p>{{text}}</p>
+                {{#with button_text}}
                 <button class="btn btn-dark">
-                    Button dark
+                    <span class="text-capitalize">{{solid}}</span>
                 </button>
-                <a href="#" class="btn btn-link">
-                    Button link
-                </a>
+                <br>
+                <br>
+                <button class="btn btn-outline-dark">{{outline}}</button>
             </div>
-        </div>
-    
-    <hr>
+                {{/with}} {{!-- button_text --}}
+            {{/with}} {{!-- subblock --}}                               
         <br>
         <br>
-        <div class="card">
-            <div class="card-body">
-                <div class="text-divrimary">My divrimary</div>
-                <div class="text-secondary">My secondary</div>
-                <div class="text-success">My success</div>
-                <div class="text-danger">My danger</div>
-                <div class="text-warning">My warning</div>
-                <div class="text-info">My info</div>
-                <div class="text-light">My light</div>
-                <div class="text-dark">My dark</div>
+        {{/with}} {{!-- heading --}}
+
+        {{#with nested_display}}
+            <div>
+                     <div class="display-1">{{title}}</div>
+                {{#with children_display}}
+                    <div class="display-4 text-center">{{title}}n</div>
+                    <p>{{text}}</p>
+                        <button class="btn btn-outline-warning">
+                            <span>{{button.text}}</span>
+                        </button>
+                {{/with}} {{!-- children_display --}}
             </div>
-        </div>
+       
+            <br>
+            <br>
+            <div>
+                <div class="display-6 text-capitalize">{{header_text}}</div>
+                <br>
+                {{#with button}}
+                 <button class="btn btn-info">
+                    <span>{{text}}</span>
+                </button>
+                {{/with}} {{!-- button --}}
+            </div>
+        {{/with}} {{!-- nested_display --}}
+            <br>
+            <br>
+        {{#with paragraph}}
+                <div>
+                    <p class="text-uppercase">{{title}}</p>
+                    <br>
+                    <p class="text-lowercase">{{text}}</p>
+                    <br>
+                    {{#with button}}
+                        <a href="{{url}}" class="text-capitalize">
+                            {{text}}
+                        </a>
+                    {{/with}} {{!-- button --}}
+                </div>
+              
+                <br>
+                <br>
+                {{#each list_name}}
+                <div>
+                    <ul>
+                        <li><a href="{{url}}" class="text-capitalize">{{text}}</a></li>
+                    </ul>
+                </div>
+               {{/each}} {{!-- list_name --}}
+        {{/with}} {{!-- paragraph --}}
   
 
-    <hr>
-
-    <button class="btn btn-outline-primary btn-lg">Outline primary</button>
-    <button class="btn btn-outline-secondary btn-sm">Outline secondary</button>
-    <button class="btn btn-outline-success">Outline success</button>
-    <button class="btn btn-outline-danger">Outline danger</button>
-    <button class="btn btn-outline-warning">Outline warning</button>
-    <button class="btn btn-outline-info">Outline info</button>
-    <button class="btn btn-outline-light">Outline light</button>
-    <button class="btn btn-outline-dark">Outline dark</button>
-
-    <hr>
-
-    <div class="card">
-        <div class="card-body">
-            <button class="btn btn-outline-primary btn-lg">Outline primary</button>
-            <button class="btn btn-outline-secondary btn-sm">Outline secondary</button>
-            <button class="btn btn-outline-success">Outline success</button>
-            <button class="btn btn-outline-danger">Outline danger</button>
-            <button class="btn btn-outline-warning">Outline warning</button>
-            <button class="btn btn-outline-info">Outline info</button>
-            <button class="btn btn-outline-light">Outline light</button>
-            <button class="btn btn-outline-dark">Outline dark</button>
-        </div>
-    </div>
+        <br>
+        <br>
+       
+    
+ 
         <br>
         <br>
     <div class="card">
         <div class="card-body">This is content</div>
     </div>
-
+ 
 </main>
