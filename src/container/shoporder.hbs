@@ -230,7 +230,6 @@
     {{/with}}
     <hr>
     {{!-- coupon --}}
-
     <section class="row mt-4" name="coupon">
         {{#with coupon}}
             <div class="display-6">{{title}}</div>
@@ -265,7 +264,6 @@
             {{/with}}
 
             {{!-- add --}}
-
             <section class="row mt-4">
                 {{#with add}}
                     {{#with friend}}
@@ -295,24 +293,81 @@
 
         {{/with}}
     <hr>
+
     {{#with quiz}}
         <section class="row mt-5">
             <div class="display-6">{{title}}</div>
-
-            {{#with preference}}
                 <div class="col-8 mt-3">
-                    <div class="form-label">{{title}}</div>
-                        {{#each options}}
-                            <div class="form-check">
-                                <label class="form-check-label">{{options}}</label>
-                                <input name="preference" type="radio" class="form-check-input">
-                            </div>
-                        {{/each}}
+                    {{#with preference}}
+                        <div class="form-check">{{title}}</div>
+                            {{#each options}}
+                                <div class="form-check">
+                                    <input name="preference" type="radio" class="form-check-input">
+                                    <label class="form-check-label">{{this}}</label>
+                                </div>
+                            {{/each}}
+                    {{/with}}
+                </div>
+        </section>
+
+        <section class="row mt-4">
+            {{#with your_expirience}}
+                <div class="col-8">
+                    <label class="form-label">{{label}}</label>
+                    <input class="form-control">
                 </div>
             {{/with}}
-
         </section>
+
+        <section class="row mt-4">
+            {{#with purchase_frequency}}
+                <div class="col-8">
+                    <label class="form-label">{{label}}</label>
+                    {{!-- <select name={{label}} required> --}}
+                        <select class="form-select" placeholder='{{placeholder}}'>
+                            <option value="" disabled selected>{{placeholder}}</option>
+                            {{#each options}}
+                                <option value="{{value}}">{{text}}</option>
+                            {{/each}}
+                        </select>
+                </div>
+            {{/with}}
+        </section>
+        <section class="row mt-4 mb-5">
+            {{#with factors}}
+                <div class="col-8 mt-3">
+                    <div class="form-check">{{title}}</div>
+                        {{#each options}}
+                            <div class="form-check">
+                                <label class="form-check-label">{{this}}</label>
+                                <input name="factors" type="checkbox" class="form-check-input">
+                            </div>
+                        {{/each}}
+                </div>           
+            {{/with}}
+        </section>
+
     {{/with}}
+    <hr>
+    {{!-- footer --}}
+     <section>
+        <div class="row g-5">
+            {{#each footer}}
+                <div class="nav col-2">
+                    <div class="nav flex-column">
+                        {{#each this}}
+                            <div class="nav-item">
+                                <a href="{{link}}" class="nav-link">{{text}}</a>
+                            </div>
+                        {{/each}}
+                        <a href="#" class="nav-link disabled">Disabled</a>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+
+    </section>
+
 </main>
 
 
