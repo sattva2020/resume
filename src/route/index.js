@@ -6,8 +6,8 @@ const router = express.Router()
 
 var header = {
   name: {
-    firstname: 'Ivan',
-    lastname: 'Ivanov',
+    firstname: 'Руслан',
+    lastname: 'Грибан',
   },
   position: 'Junior Fullstack JS Developer',
   salary: '600$ в місяц',
@@ -17,12 +17,12 @@ var header = {
 var footer = {
   social: {
     email: {
-      text: 'ivanov@mail.com',
-      href: 'mailto:ivanov@mail.com',
+      text: 'ruslan.griban@gmail.com',
+      href: 'mailto:ruslan.griban@gmail.com',
     },
     phone: {
-      text: '+380670000123',
-      href: 'tel:+380670000123',
+      text: '+380673229820',
+      href: 'tel:+380673229820',
     },
     linkedin: {
       text: 'Linkedin',
@@ -39,7 +39,9 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: "index",
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
